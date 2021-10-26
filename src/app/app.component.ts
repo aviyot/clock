@@ -20,6 +20,18 @@ export class AppComponent implements OnInit {
     setInterval(() => {
       this.time = new Date();
     }, 1000);
+
+    document.addEventListener('fullscreenchange', () => {
+      if (document.fullscreenElement) {
+        this.fullScreen = true;
+        screen.orientation.lock('portrait').catch((e) => {
+          console.log(e);
+        });
+      } else {
+        this.fullScreen = false;
+        screen.orientation.unlock();
+      }
+    });
   }
   incFont() {
     this.fontSize++;
