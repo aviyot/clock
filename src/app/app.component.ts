@@ -23,13 +23,11 @@ export class AppComponent implements OnInit {
   }
   incFont() {
     this.fontSize++;
-    console.log(this.fontSize.toString());
     localStorage?.setItem('fontSize', this.fontSize.toString());
   }
 
   decFont() {
     this.fontSize--;
-    console.log(this.fontSize.toString());
 
     localStorage?.setItem('fontSize', this.fontSize.toString());
   }
