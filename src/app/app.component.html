@@ -11,15 +11,15 @@
 <div (click)="lockScreenHandler()" style="position: absolute;right: 8px;top:8px">
   <div>SCREEN</div>
   <div style="position: static">
-    <div *ngIf="!wakeLock" style="color: red;position: absolute;left:0">OFF</div>
+    <div *ngIf="!wakeLock" style="color: gray;position: absolute;left:0">OFF</div>
     <div *ngIf="wakeLock" style="color: green;position: absolute;right: 0;">ON</div>
   </div>
 </div>
 <div style="position: absolute;top:8px;left:8px">
-  <div>Full Screen</div>
-  <div>
-    <div *ngIf="!fullScreen" (click)="enterFullScreen()">ENTER</div>
-    <div (click)="exitFullScreen()" *ngIf="fullScreen">EXIT</div>
+  <div>FULL SCREEN</div>
+  <div style="position: static">
+    <div *ngIf="fullScreen" (click)="exitFullScreen()" style="color:green;position: absolute;right:0">ON</div>
+    <div *ngIf="!fullScreen" (click)="enterFullScreen()" style="color: gray;position: absolute;left:0">OFF</div>
   </div>
 
 </div>
