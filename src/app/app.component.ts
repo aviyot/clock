@@ -34,12 +34,12 @@ export class AppComponent implements OnInit {
     });
   }
   incFont() {
-    this.fontSize++;
+    this.fontSize += 4;
     localStorage?.setItem('fontSize', this.fontSize.toString());
   }
 
   decFont() {
-    this.fontSize--;
+    this.fontSize -= 4;
 
     localStorage?.setItem('fontSize', this.fontSize.toString());
   }
