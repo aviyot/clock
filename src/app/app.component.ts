@@ -79,6 +79,7 @@ export class AppComponent implements OnInit {
     });
   }
   exitFullScreen() {
+    //
     document.exitFullscreen().then(() => {
       this.fullScreen = false;
       if (this.wakeLock) this.lockScreenHandler();
