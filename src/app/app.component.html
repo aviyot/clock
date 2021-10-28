@@ -3,10 +3,11 @@
   <div style="flex:1 1 0">{{time | date : 'mm'}} </div>
   <div style="flex:1 1 0"> {{time | date : 'ss'}}</div>
 </div>
-<div (click)="incFont()"
-  style="position: absolute;right:8px;bottom: 8px;font-size: x-large;padding: 8px;background-color: black;">+</div>
-<div (click)="decFont()"
-  style="position: absolute;left:8px;bottom: 8px;font-size: x-large;padding: 8px;background-color: black;">-</div>
+<div style="position: absolute;left:8px;bottom: 8px;font-size: x-large;display: flex;flex-direction: column;">
+  <button style="background-color: inherit;color: inherit;padding: 12px;margin-bottom: 8px;"
+    (click)="incFont()">+</button>
+  <button style="background-color: inherit;color: inherit;padding: 12px;" (click)="decFont()">-</button>
+</div>
 <div (click)="lockScreenHandler()" style="position: absolute;right: 8px;top:8px">
   <div>SCREEN</div>
   <div style="position: static">
