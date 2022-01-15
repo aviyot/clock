@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
   wakeLock: any = null;
   navigator: any = window.navigator;
   fullScreen: boolean = false;
+  settings = false;
+  settingsSetTimeout: any;
   ngOnInit() {
     if (localStorage!.getItem('fontSize')) {
       this.fontSize = +localStorage!.getItem('fontSize')!;
@@ -84,5 +86,15 @@ export class AppComponent implements OnInit {
       this.fullScreen = false;
       if (this.wakeLock) this.lockScreenHandler();
     });
+  }
+
+  showSettings() {
+    this.settings = true;
+    if (this.settingsSetTimeout) {
+      clearTimeout(this.settingsSetTimeout);
+    }
+    this.settingsSetTimeout = setTimeout(() => {
+      this.settings = false;
+    }, 5000);
   }
 }

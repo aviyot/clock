@@ -1,25 +1,28 @@
-<div class="clock" [ngStyle]="{'fontSize.px': fontSize}" style="display: flex;flex-direction: column;">
+<div class="clock" (click)="showSettings()" [ngStyle]="{'fontSize.px': fontSize}"
+  style="display: flex;flex-direction: column;">
   <div style="flex:1 1 0"> {{time | date : 'HH'}}</div>
   <div style="flex:1 1 0">{{time | date : 'mm'}} </div>
   <div style="flex:1 1 0"> {{time | date : 'ss'}}</div>
 </div>
-<div style="position: absolute;left:8px;bottom: 8px;font-size: x-large;display: flex;flex-direction: column;">
-  <button style="background-color: inherit;color: inherit;padding: 12px;margin-bottom: 8px;"
-    (click)="incFont()">+</button>
-  <button style="background-color: inherit;color: inherit;padding: 12px;" (click)="decFont()">-</button>
-</div>
-<div (click)="lockScreenHandler()" style="position: absolute;right: 8px;top:8px">
-  <div>SCREEN</div>
-  <div style="position: static">
-    <div *ngIf="!wakeLock" style="color: gray;position: absolute;left:0">OFF</div>
-    <div *ngIf="wakeLock" style="color: green;position: absolute;right: 0;">ON</div>
+<div *ngIf="settings">
+  <div style="position: absolute;left:8px;bottom: 8px;font-size: x-large;display: flex;flex-direction: column;">
+    <button style="background-color: inherit;color: inherit;padding: 12px;margin-bottom: 8px;"
+      (click)="incFont()">+</button>
+    <button style="background-color: inherit;color: inherit;padding: 12px;" (click)="decFont()">-</button>
   </div>
-</div>
-<div style="position: absolute;top:8px;left:8px">
-  <div>FULL SCREEN</div>
-  <div style="position: static">
-    <div *ngIf="fullScreen" (click)="exitFullScreen()" style="color:green;position: absolute;right:0">ON</div>
-    <div *ngIf="!fullScreen" (click)="enterFullScreen()" style="color: gray;position: absolute;left:0">OFF</div>
+  <div (click)="lockScreenHandler()" style="position: absolute;right: 8px;top:8px">
+    <div>SCREEN</div>
+    <div style="position: static">
+      <div *ngIf="!wakeLock" style="color: gray;position: absolute;left:0">OFF</div>
+      <div *ngIf="wakeLock" style="color: green;position: absolute;right: 0;">ON</div>
+    </div>
   </div>
+  <div style="position: absolute;top:8px;left:8px">
+    <div>FULL SCREEN</div>
+    <div style="position: static">
+      <div *ngIf="fullScreen" (click)="exitFullScreen()" style="color:green;position: absolute;right:0">ON</div>
+      <div *ngIf="!fullScreen" (click)="enterFullScreen()" style="color: gray;position: absolute;left:0">OFF</div>
+    </div>
 
+  </div>
 </div>
