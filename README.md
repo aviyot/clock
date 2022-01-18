@@ -1,6 +1,6 @@
 # Clock
 
-##Digital clock - Full Screen
+## Digital clock - Full Screen
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
 
