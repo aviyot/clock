@@ -34,6 +34,8 @@ export class AppComponent implements OnInit {
         screen.orientation.unlock();
       }
     });
+
+    this.showSettings();
   }
   incFont() {
     this.fontSize += 4;
